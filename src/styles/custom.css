@@ -1,0 +1,169 @@
+.intercom-lightweight-app-launcher {
+    background: #349af0 !important;
+    border-radius: 12px !important;
+    bottom: 60px !important;
+}
+
+#api-animation-md {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.opacity-0 {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+#slider-track {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/* Custom animations with unique class names */
+.superapp-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+.superapp-content.superapp-active {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+}
+
+.superapp-tab {
+    transition: all 0.3s ease;
+}
+
+.superapp-tab.superapp-active {
+    position: relative;
+    color: #4c9b4e;
+}
+
+.superapp-tab.superapp-active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #4c9b4e;
+    border-radius: 5px;
+    animation: superapp-underline 0.3s ease;
+}
+
+@keyframes superapp-underline {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Hide scrollbar but allow scrolling */
+.superapp-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.superapp-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+.threshold--top {
+    top: 50%;
+}
+
+
+.text {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.text p {
+    width: 40%;
+}
+
+.image {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.image.active {
+    opacity: 1;
+}
+
+.locker {
+    margin-top: -200px;
+    margin-bottom: -160px;
+    position: relative;
+    display: grid;
+    grid-template-columns: [full-start] minmax(0rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 8rem) [col-end]) [center-end] minmax(0rem, 1fr) [full-end];
+}
+
+.locker__image {
+    position: relative;
+    grid-column: col-start 1 / col-end 6;
+}
+
+.locker__image .image {
+    width: 90%;
+    height: 500px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: all 1s ease;
+    border-radius: 30px;
+}
+
+.locker__container {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locker__content {
+    grid-column: col-start 8 / center-end;
+    margin-left: -50px;
+}
+
+.locker__section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.locker__section:first-child {
+    border: none;
+}
+
+.locker__section p {
+    width: 80%;
+}
+
+
